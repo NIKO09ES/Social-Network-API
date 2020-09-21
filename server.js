@@ -10,8 +10,6 @@ app.use(express.static('public'));
 
 app.use(require('./routes'));
 
-app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
-
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Social-Network-API', {
   useFindAndModify: false,
   useNewUrlParser: true,
@@ -20,3 +18,5 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Social-Network-
 
 // Use this to log mongo queries being executed!
 mongoose.set('debug', true);
+
+app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
